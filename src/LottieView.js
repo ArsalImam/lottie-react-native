@@ -146,7 +146,7 @@ class LottieView extends React.PureComponent {
   }
 
   render() {
-    const { style, source, autoSize, autoPlay, ...rest } = this.props;
+    const { style, source, autoSize, autoPlay, pointerEvents, ...rest } = this.props;
 
     const sourceName = typeof source === 'string' ? source : undefined;
     const sourceJson =
@@ -174,7 +174,7 @@ class LottieView extends React.PureComponent {
       : undefined;
 
     return (
-      <View style={[aspectRatioStyle, sizeStyle, style]}>
+      <View style={[aspectRatioStyle, sizeStyle, style]} pointerEvents={pointerEvents}>
         <AnimatedNativeLottieView
           ref={this.refRoot}
           {...rest}
